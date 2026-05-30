@@ -1,0 +1,327 @@
+# ========================================
+# CXTeleport - Configuracao Principal
+# ========================================
+
+# Idioma das mensagens (pt-BR, en-US, es-ES)
+language: pt-BR
+
+# Verificar atualizacoes ao iniciar
+check-updates: true
+
+# Ativar metricas (bStats)
+metrics: true
+
+# ========================================
+# Suporte ao Folia
+# ========================================
+folia:
+  # Detecao automatica do Folia
+  auto-detect: true
+  # Usar schedulers regionais quando disponivel
+  regional-schedulers: true
+  # Timeout para teleportes assincronos (ticks)
+  async-teleport-timeout: 100
+
+# ========================================
+# Configuracoes Gerais de Teleporte
+# ========================================
+teleport:
+  # Warmup antes do teleporte (segundos)
+  warmup: 5
+  # Cancelar warmup ao se mover
+  cancel-on-move: true
+  # Cancelar warmup ao tomar dano
+  cancel-on-damage: true
+  # Protecao temporaria apos teleporte (segundos, 0 para desativar)
+  invulnerability: 5
+  # Verificar se o local de destino e seguro
+  check-safe-location: true
+  # Distancia maxima para verificar local seguro
+  safe-location-range: 10
+  # Efeito de nause ao teleportar
+  nausea-effect: true
+  # Duracao do efeito de nause (ticks)
+  nausea-duration: 60
+  # Som ao teleportar
+  sound: ENTITY_ENDERMAN_TELEPORT
+  # Volume do som (0.0 - 1.0)
+  sound-volume: 1.0
+  # Particulas ao teleportar
+  particles: PORTAL
+  # Quantidade de particulas
+  particle-count: 50
+
+# ========================================
+# Protecao PvP
+# ========================================
+pvp-protection:
+  # Ativar protecao PvP
+  enabled: true
+  # Duracao da protecao apos teleporte (segundos)
+  duration: 15
+  # Bloquear teleportes durante combate (segundos apos ultimo dano)
+  combat-cooldown: 15
+  # Cancelar protecao se o jogador atacar
+  cancel-on-attack: true
+
+# ========================================
+# Sistema de TPA
+# ========================================
+tpa:
+  # Tempo de expiracao da solicitacao (segundos)
+  request-timeout: 60
+  # Cooldown entre solicitacoes (segundos)
+  cooldown: 10
+  # Maximo de solicitacoes pendentes
+  max-pending: 5
+  # Notificar quando solicitacao expirar
+  notify-expire: true
+  # Teleportar automaticamente ao aceitar (sem warmup extra)
+  instant-on-accept: true
+  # Ativar historico de TPA
+  history-enabled: true
+  # Maximo de entradas no historico
+  max-history: 50
+
+# ========================================
+# Sistema de Casas
+# ========================================
+homes:
+  # Limite padrao de casas
+  default-limit: 3
+  # Usar permissoes para limites (cxteleport.home.limit.N)
+  use-permission-limits: true
+  # Cooldown entre usos (segundos)
+  cooldown: 10
+  # Custo para definir casa (0 = gratis, requer Vault)
+  set-cost: 0.0
+  # Custo para teleportar (0 = gratis, requer Vault)
+  teleport-cost: 0.0
+  # Ativar GUI de casas
+  gui-enabled: true
+  # Titulo da GUI
+  gui-title: "&8Suas Casas"
+  # Tamanho da GUI (9, 18, 27, 36, 45, 54)
+  gui-size: 27
+  # Item para representar casa na GUI
+  gui-item: RED_BED
+  # Permitir nomes duplicados (case insensitive)
+  allow-duplicate-names: false
+
+# ========================================
+# Sistema de Warps
+# ========================================
+warps:
+  # Cooldown entre usos (segundos)
+  cooldown: 5
+  # Custo para criar warp (0 = gratis, requer Vault)
+  create-cost: 0.0
+  # Custo para usar warp (0 = gratis, requer Vault)
+  use-cost: 0.0
+  # Ativar GUI de warps
+  gui-enabled: true
+  # Titulo da GUI
+  gui-title: "&8Warps"
+  # Tamanho da GUI
+  gui-size: 27
+  # Ativar categorias
+  categories-enabled: true
+  # Itens por categoria na GUI
+  items-per-category: 21
+  # Efeito ao teleportar via warp
+  teleport-sound: ENTITY_ENDERMAN_TELEPORT
+  # Particulas ao teleportar
+  teleport-particles: END_ROD
+
+# ========================================
+# Sistema de Spawn
+# ========================================
+spawn:
+  # Teleportar para spawn ao entrar pela primeira vez
+  first-login: true
+  # Teleportar para spawn ao morrer (sem bed spawn)
+  respawn: true
+  # Spawn por mundo (usar spawn do mundo atual)
+  per-world: false
+  # Mundo padrao para o spawn global
+  default-world: world
+  # Cooldown (segundos)
+  cooldown: 5
+  # Custo para ir ao spawn (0 = gratis)
+  cost: 0.0
+
+# ========================================
+# Sistema de Retorno (/voltar)
+# ========================================
+back:
+  # Cooldown (segundos)
+  cooldown: 30
+  # Custo para usar (0 = gratis, requer Vault)
+  cost: 0.0
+  # Permitir voltar ao local da morte
+  death-back: true
+  # Salvar localizacao antes de cada teleporte
+  save-on-teleport: true
+  # Bloquear durante combate
+  combat-block: true
+
+# ========================================
+# Sistema de RTP
+# ========================================
+rtp:
+  # Ativar RTP
+  enabled: true
+  # Distancia minima do spawn
+  min-distance: 500
+  # Distancia maxima do spawn
+  max-distance: 5000
+  # Cooldown (segundos)
+  cooldown: 300
+  # Maximo de tentativas para encontrar local seguro
+  max-attempts: 50
+  # Blacklist de biomas
+  biomes-blacklist:
+    - OCEAN
+    - DEEP_OCEAN
+    - FROZEN_OCEAN
+    - DEEP_FROZEN_OCEAN
+    - COLD_OCEAN
+    - DEEP_COLD_OCEAN
+    - LUKEWARM_OCEAN
+    - DEEP_LUKEWARM_OCEAN
+    - WARM_OCEAN
+    - DEEP_WARM_OCEAN
+  # Blacklist de blocos (para nao spawnar em cima)
+  blocks-blacklist:
+    - LAVA
+    - WATER
+    - CACTUS
+    - MAGMA_BLOCK
+    - FIRE
+    - SWEET_BERRY_BUSH
+    - POWDER_SNOW
+  # Mundos permitidos
+  worlds:
+    world:
+      enabled: true
+      min-distance: 500
+      max-distance: 5000
+    world_nether:
+      enabled: false
+    world_the_end:
+      enabled: false
+  # Sistema de fila
+  queue:
+    enabled: true
+    # Maximo de jogadores na fila
+    max-size: 50
+    # Delay entre processamentos (ticks)
+    process-delay: 20
+  # GUI de selecao de mundo
+  gui:
+    enabled: true
+    title: "&8Random Teleport"
+    size: 27
+  # Efeitos
+  effects:
+    sound: ENTITY_EVOKER_CAST_SPELL
+    particles: PORTAL
+    particle-count: 100
+
+# ========================================
+# RTP por Zona
+# ========================================
+rtp-zones:
+  # Ativar zonas de RTP
+  enabled: false
+  # Zonas definidas
+  zones:
+    exemplo:
+      world: world
+      min-x: -1000
+      max-x: 1000
+      min-z: -1000
+      max-z: 1000
+      countdown: 5
+      message: "&aTeleportando para a zona exemplo..."
+
+# ========================================
+# Sistema de Prisao
+# ========================================
+jail:
+  # Ativar sistema de prisao
+  enabled: true
+  # Local da prisao (definido com /setjail via comando admin)
+  # jail-location sera definido in-game
+  # Bloquear comandos enquanto preso
+  block-commands: true
+  # Lista de comandos bloqueados
+  blocked-commands:
+    - home
+    - warp
+    - spawn
+    - rtp
+    - tpa
+    - tpaaqui
+    - back
+    - voltar
+    - casa
+    - setcasa
+  # Bloquear teleporte enquanto preso
+  block-teleport: true
+  # Mensagem ao tentar usar comando bloqueado
+  blocked-message: "&cVoce esta preso e nao pode usar este comando!"
+
+# ========================================
+# Teleporte entre Servidores (Bungee/Velocity)
+# ========================================
+cross-server:
+  # Ativar teleporte entre servidores
+  enabled: false
+  # Tipo de proxy (VELOCITY ou BUNGEECORD)
+  proxy-type: VELOCITY
+  # Redis para sincronizacao entre servidores
+  redis:
+    enabled: false
+    host: localhost
+    port: 6379
+    password: ""
+    database: 0
+  # Servidores permitidos para TPA
+  allowed-servers: []
+  # Timeout de solicitacao entre servidores (segundos)
+  request-timeout: 30
+
+# ========================================
+# GUI Configuracoes Gerais
+# ========================================
+gui:
+  # Item para preencher slots vazios
+  filler-item: GRAY_STAINED_GLASS_PANE
+  # Nome do item de preenchimento
+  filler-name: " "
+  # Item de pagina anterior
+  previous-page-item: ARROW
+  previous-page-name: "&aPagina Anterior"
+  # Item de proxima pagina
+  next-page-item: ARROW
+  next-page-name: "&aProxima Pagina"
+  # Item para fechar
+  close-item: BARRIER
+  close-name: "&cFechar"
+
+# ========================================
+# Armazenamento de Dados
+# ========================================
+storage:
+  # Tipo: FLAT (arquivos JSON) ou MYSQL
+  type: FLAT
+  # Configuracoes MySQL
+  mysql:
+    host: localhost
+    port: 3306
+    database: cxteleport
+    username: root
+    password: ""
+    pool-size: 10
+    prefix: "cxt_"

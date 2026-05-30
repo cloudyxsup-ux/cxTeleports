@@ -1,0 +1,267 @@
+name: CXTeleport
+version: '${project.version}'
+main: com.cxteleport.CXTeleport
+api-version: '1.20'
+description: Sistema de teleporte definitivo para Paper, Purpur e Folia
+author: CXDev
+website: https://cxteleport.com
+softdepend:
+  - PlaceholderAPI
+  - Vault
+  - Essentials
+  - luckperms
+loadbefore: []
+folia-supported: true
+
+commands:
+  teleportar:
+    description: Solicita teleporte para um jogador
+    aliases: [tpa]
+    usage: /<command> <jogador>
+  tpaaqui:
+    description: Solicita que um jogador venha ate voce
+    aliases: [tpahere]
+    usage: /<command> <jogador>
+  tpaceitar:
+    description: Aceita uma solicitacao de teleporte
+    aliases: [tpaccept]
+    usage: /<command> [jogador]
+  tprecusar:
+    description: Recusa uma solicitacao de teleporte
+    aliases: [tpdeny]
+    usage: /<command> [jogador]
+  tpcancelar:
+    description: Cancela solicitacoes pendentes
+    aliases: [tpcancel]
+    usage: /<command>
+  toggletpa:
+    description: Ativa ou desativa solicitacoes de teleporte
+    usage: /<command>
+  toggletpaaqui:
+    description: Ativa ou desativa solicitacoes de vir ate voce
+    usage: /<command>
+  tpaauto:
+    description: Ativa ou desativa autoaceitacao
+    usage: /<command>
+  tpahistorico:
+    description: Exibe historico de solicitacoes
+    aliases: [tpahistory]
+    usage: /<command> [pagina]
+  tpbloquear:
+    description: Bloqueia solicitacoes de um jogador
+    aliases: [tpblock]
+    usage: /<command> <jogador>
+  tpdesbloquear:
+    description: Remove o bloqueio de um jogador
+    aliases: [tpunblock]
+    usage: /<command> <jogador>
+  casa:
+    description: Teleporta para uma casa
+    aliases: [home]
+    usage: /<command> <nome>
+  setcasa:
+    description: Define uma nova casa
+    aliases: [sethome]
+    usage: /<command> <nome>
+  delcasa:
+    description: Remove uma casa
+    aliases: [delhome]
+    usage: /<command> <nome>
+  casas:
+    description: Lista todas as casas
+    aliases: [homes]
+    usage: /<command>
+  warp:
+    description: Teleporta para uma warp
+    usage: /<command> <nome>
+  setwarp:
+    description: Cria uma warp
+    usage: /<command> <nome>
+  delwarp:
+    description: Remove uma warp
+    usage: /<command> <nome>
+  warps:
+    description: Lista todas as warps
+    usage: /<command>
+  spawn:
+    description: Teleporta para o spawn
+    usage: /<command> [jogador]
+  setspawn:
+    description: Define o spawn
+    usage: /<command>
+  rtp:
+    description: Teleporte aleatorio
+    usage: /<command> [mundo]
+  rtpfila:
+    description: Entra ou sai da fila de RTP
+    aliases: [rtpqueue]
+    usage: /<command>
+  voltar:
+    description: Retorna para a ultima localizacao
+    aliases: [back]
+    usage: /<command>
+  tp:
+    description: Teleporta ate um jogador
+    usage: /<command> <jogador>
+  tphere:
+    description: Puxa um jogador ate voce
+    usage: /<command> <jogador>
+  tppos:
+    description: Teleporta para coordenadas
+    usage: /<command> <x> <y> <z> [mundo]
+  tpsubir:
+    description: Teleporta para cima
+    aliases: [tpup]
+    usage: /<command> <blocos>
+  tptodos:
+    description: Teleporta todos os jogadores
+    aliases: [tpall]
+    usage: /<command>
+  tplog:
+    description: Historico de teletransportes
+    usage: /<command> [jogador] [pagina]
+  prender:
+    description: Prende um jogador
+    aliases: [jail]
+    usage: /<command> <jogador>
+  soltar:
+    description: Liberta um jogador
+    aliases: [unjail]
+    usage: /<command> <jogador>
+  cxteleport:
+    description: Comando principal do plugin
+    usage: /<command> <reload|help|stats>
+
+permissions:
+  cxteleport.tpa:
+    description: Permite usar /tpa
+    default: true
+  cxteleport.tpahere:
+    description: Permite usar /tpaaqui
+    default: true
+  cxteleport.tpaccept:
+    description: Permite aceitar solicitacoes
+    default: true
+  cxteleport.tpdeny:
+    description: Permite recusar solicitacoes
+    default: true
+  cxteleport.tpcancel:
+    description: Permite cancelar solicitacoes
+    default: true
+  cxteleport.toggle:
+    description: Permite usar /toggletpa e /toggletpaaqui
+    default: true
+  cxteleport.tpaauto:
+    description: Permite usar /tpaauto
+    default: true
+  cxteleport.tpahistory:
+    description: Permite ver historico de TPA
+    default: true
+  cxteleport.tpblock:
+    description: Permite bloquear jogadores
+    default: true
+  cxteleport.home:
+    description: Permite usar /casa
+    default: true
+  cxteleport.sethome:
+    description: Permite definir casas
+    default: true
+  cxteleport.delhome:
+    description: Permite deletar casas
+    default: true
+  cxteleport.homes:
+    description: Permite listar casas
+    default: true
+  cxteleport.home.unlimited:
+    description: Casas ilimitadas
+    default: false
+  cxteleport.home.limit.1:
+    description: Limite de 1 casa
+    default: false
+  cxteleport.home.limit.3:
+    description: Limite de 3 casas
+    default: false
+  cxteleport.home.limit.5:
+    description: Limite de 5 casas
+    default: false
+  cxteleport.home.limit.10:
+    description: Limite de 10 casas
+    default: false
+  cxteleport.warp:
+    description: Permite usar /warp
+    default: true
+  cxteleport.warps:
+    description: Permite listar warps
+    default: true
+  cxteleport.setwarp:
+    description: Permite criar warps
+    default: op
+  cxteleport.delwarp:
+    description: Permite deletar warps
+    default: op
+  cxteleport.spawn:
+    description: Permite usar /spawn
+    default: true
+  cxteleport.spawn.others:
+    description: Permite teleportar outros para o spawn
+    default: op
+  cxteleport.setspawn:
+    description: Permite definir o spawn
+    default: op
+  cxteleport.rtp:
+    description: Permite usar /rtp
+    default: true
+  cxteleport.rtp.queue:
+    description: Permite usar a fila de RTP
+    default: true
+  cxteleport.rtp.bypass:
+    description: Ignora cooldown de RTP
+    default: op
+  cxteleport.back:
+    description: Permite usar /voltar
+    default: true
+  cxteleport.back.death:
+    description: Permite voltar ao local da morte
+    default: true
+  cxteleport.tp:
+    description: Permite teleportar ate jogadores
+    default: op
+  cxteleport.tphere:
+    description: Permite puxar jogadores
+    default: op
+  cxteleport.tppos:
+    description: Permite teleportar para coordenadas
+    default: op
+  cxteleport.tpup:
+    description: Permite teleportar para cima
+    default: op
+  cxteleport.tpall:
+    description: Permite teleportar todos os jogadores
+    default: op
+  cxteleport.tplog:
+    description: Permite ver historico de teletransportes
+    default: op
+  cxteleport.jail:
+    description: Permite prender jogadores
+    default: op
+  cxteleport.unjail:
+    description: Permite libertar jogadores
+    default: op
+  cxteleport.admin:
+    description: Permite usar comandos administrativos
+    default: op
+  cxteleport.reload:
+    description: Permite recarregar configuracoes
+    default: op
+  cxteleport.bypass.cooldown:
+    description: Ignora todos os cooldowns
+    default: false
+  cxteleport.bypass.warmup:
+    description: Ignora warmup de teleporte
+    default: false
+  cxteleport.bypass.combat:
+    description: Ignora bloqueio de combate
+    default: false
+  cxteleport.bypass.jail:
+    description: Ignora bloqueio de prisao
+    default: false

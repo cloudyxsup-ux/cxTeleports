@@ -1,0 +1,175 @@
+# ========================================
+# CXTeleport - Mensagens
+# ========================================
+# Placeholders disponiveis:
+# {player} - Nome do jogador
+# {target} - Nome do jogador alvo
+# {home} - Nome da casa
+# {warp} - Nome da warp
+# {world} - Nome do mundo
+# {x}, {y}, {z} - Coordenadas
+# {cooldown} - Tempo de cooldown
+# {seconds} - Segundos
+# {cost} - Custo
+# {balance} - Saldo do jogador
+# {limit} - Limite
+# {count} - Quantidade
+# {page} - Pagina atual
+# {pages} - Total de paginas
+# {prefix} - Prefixo do plugin
+# {time} - Tempo formatado
+# {line} - Quebra de linha
+
+prefix: "&8[&bCXTeleport&8] &r"
+
+# Mensagens gerais
+general:
+  no-permission: "&cVoce nao tem permissao para isso."
+  player-not-found: "&cJogador nao encontrado ou offline."
+  player-only: "&cEste comando so pode ser executado por jogadores."
+  cooldown: "&cAguarde &e{cooldown} &csegundos antes de usar novamente."
+  no-money: "&cVoce nao tem dinheiro suficiente. Custo: &e${cost}&c. Saldo: &e${balance}"
+  paid: "&aVoce pagou &e${cost} &apara usar este comando."
+  reloaded: "&aConfiguracoes recarregadas com sucesso."
+  teleport-cancelled: "&cTeleporte cancelado!"
+  teleport-cancelled-move: "&cTeleporte cancelado! Voce se moveu."
+  teleport-cancelled-damage: "&cTeleporte cancelado! Voce tomou dano."
+  teleport-warmup: "&eTeleportando em &b{seconds} &esegundos... Nao se mova!"
+  teleport-success: "&aTeleportado com sucesso!"
+  teleport-unsafe: "&cNao foi possivel encontrar um local seguro para teleportar."
+  combat-blocked: "&cVoce esta em combate! Aguarde &e{seconds} &csegundos."
+  jail-blocked: "&cVoce esta preso e nao pode se teleportar!"
+  warmup-bar-title: "&bTeleportando..."
+
+# Sistema de TPA
+tpa:
+  sent: "&aSolicitacao de teleporte enviada para &e{target}&a."
+  received: "&e{player} &adeseja se teleportar ate voce. Use &e/tpaceitar &aou &e/tprecusar&a."
+  received-here: "&e{player} &adeseja que voce va ate ele. Use &e/tpaceitar &aou &e/tprecusar&a."
+  accepted: "&aSolicitacao de teleporte aceita!"
+  accepted-target: "&e{player} &aaceitou sua solicitacao!"
+  denied: "&cSolicitacao de teleporte recusada."
+  denied-target: "&e{player} &crecusou sua solicitacao."
+  cancelled: "&aSolicitacoes pendentes canceladas."
+  expired: "&cSolicitacao de teleporte expirada."
+  expired-target: "&cSua solicitacao para &e{player} &cexpirou."
+  no-pending: "&cVoce nao tem solicitacoes pendentes."
+  no-pending-from: "&cNenhuma solicitacao pendente de &e{player}&c."
+  self-teleport: "&cVoce nao pode teleportar para si mesmo!"
+  already-sent: "&cVoce ja enviou uma solicitacao para &e{player}&c."
+  too-many: "&cVoce tem muitas solicitacoes pendentes. Aguarde."
+  blocked-by-target: "&c{target} bloqueou solicitacoes de teleporte."
+  target-toggled-off: "&c{target} desativou solicitacoes de teleporte."
+  target-toggled-off-here: "&c{target} desativou solicitacoes para vir ate ele."
+  toggle-on: "&aSolicitacoes de teleporte &bativadas&a."
+  toggle-off: "&cSolicitacoes de teleporte &4desativadas&c."
+  toggle-here-on: "&aSolicitacoes para vir ate voce &bativadas&a."
+  toggle-here-off: "&cSolicitacoes para vir ate voce &4desativadas&c."
+  auto-on: "&aAutoaceitacao &bativada&a."
+  auto-off: "&cAutoaceitacao &4desativada&c."
+  blocked-player: "&cVoce bloqueou solicitacoes de &e{player}&c."
+  unblocked-player: "&aVoce desbloqueou solicitacoes de &e{player}&a."
+  already-blocked: "&c{player} ja esta bloqueado."
+  not-blocked: "&c{player} nao esta bloqueado."
+  history-title: "&8Historico de TPA - Pagina {page}/{pages}"
+  history-entry: "&7[{time}] &e{player} &7-> &e{target} &8({status})"
+  history-empty: "&cNenhuma entrada no historico."
+
+# Sistema de Casas
+homes:
+  teleported: "&aTeleportado para casa &e{home}&a!"
+  set: "&aCasa &e{home} &adefinida com sucesso!"
+  deleted: "&aCasa &e{home} &aremovida com sucesso!"
+  not-found: "&cCasa &e{home} &cnao encontrada."
+  limit-reached: "&cVoce atingiu o limite de &e{limit} &ccasas!"
+  list-title: "&8Suas Casas &7({count}/{limit})"
+  list-entry: "&e{home} &7- &f{world}, {x}, {y}, {z}"
+  list-empty: "&cVoce nao tem nenhuma casa definida."
+  already-exists: "&cVoce ja tem uma casa com o nome &e{home}&c."
+  gui-title: "&8Suas Casas"
+  cost-set: "&aVoce pagou &e${cost} &apara definir esta casa."
+  cost-teleport: "&aVoce pagou &e${cost} &apara teleportar."
+
+# Sistema de Warps
+warps:
+  teleported: "&aTeleportado para warp &e{warp}&a!"
+  created: "&aWarp &e{warp} &acriada com sucesso!"
+  deleted: "&aWarp &e{warp} &aremovida com sucesso!"
+  not-found: "&cWarp &e{warp} &cnao encontrada."
+  already-exists: "&cWarp &e{warp} &cja existe."
+  list-title: "&8Warps &7({count})"
+  list-entry: "&e{warp} &7- &f{world}, {x}, {y}, {z}"
+  list-empty: "&cNenhuma warp definida."
+  no-permission-warp: "&cVoce nao tem permissao para usar esta warp."
+  cost-create: "&aVoce pagou &e${cost} &apara criar esta warp."
+  cost-use: "&aVoce pagou &e${cost} &apara usar esta warp."
+
+# Sistema de Spawn
+spawn:
+  teleported: "&aTeleportado para o spawn!"
+  teleported-other: "&aTeleportado &e{player} &apara o spawn!"
+  set: "&aSpawn definido com sucesso!"
+  not-set: "&cSpawn nao definido. Use /setspawn para definir."
+  first-login: "&aBem-vindo! Teleportado para o spawn."
+
+# Sistema de Retorno
+back:
+  teleported: "&aRetornado a localizacao anterior!"
+  no-location: "&cNenhuma localizacao anterior registrada."
+  death-back: "&aRetornado ao local da morte!"
+  death-location-saved: "&eUse &b/voltar &epara retornar ao local da morte."
+
+# Sistema de RTP
+rtp:
+  teleported: "&aTeleportado aleatoriamente para &e{world}, {x}, {y}, {z}&a!"
+  searching: "&eProcurando local seguro..."
+  not-found: "&cNao foi possivel encontrar um local seguro apos {count} tentativas."
+  world-not-allowed: "&cRTP nao esta disponivel neste mundo."
+  queue:
+    joined: "&aVoce entrou na fila de RTP. Posicao: &e{position}"
+    left: "&cVoce saiu da fila de RTP."
+    already-in: "&cVoce ja esta na fila de RTP."
+    not-in: "&cVoce nao esta na fila de RTP."
+    processing: "&eProcessando seu RTP..."
+  zone:
+    teleported: "&aTeleportado para a zona &e{zone}&a!"
+    countdown: "&eTeleportando em &b{seconds} &esegundos..."
+    not-found: "&cZona &e{zone} &cnao encontrada."
+
+# Sistema de Prisao
+jail:
+  jailed: "&cVoce foi preso por &e{player}&c!"
+  unjailed: "&aVoce foi libertado por &e{player}&a!"
+  already-jailed: "&c{player} ja esta preso."
+  not-jailed: "&c{player} nao esta preso."
+  jailed-player: "&cVoce prendeu &e{player}&c."
+  unjailed-player: "&aVoce libertou &e{player}&a."
+  no-location: "&cLocal da prisao nao definido."
+
+# Comandos Admin
+admin:
+  tp-success: "&aTeleportado para &e{player}&a."
+  tphere-success: "&aPuxou &e{player} &aate voce."
+  tppos-success: "&aTeleportado para &e{x}, {y}, {z} &ano mundo &e{world}&a."
+  tpup-success: "&aTeleportado &e{blocks} &ablocos para cima."
+  tpall-success: "&aTeleportou todos os jogadores ate voce."
+  tplog-title: "&8Historico de Teletransportes - Pagina {page}/{pages}"
+  tplog-entry: "&7[{time}] &e{player} &7-> &e{target} &8({type})"
+  stats:
+    title: "&8======= &bCXTeleport Stats &8======="
+    total-teleports: "&7Total de teleportes: &e{count}"
+    total-homes: "&7Total de casas: &e{count}"
+    total-warps: "&7Total de warps: &e{count}"
+    total-tpa: "&7Total de solicitacoes TPA: &e{count}"
+    total-rtp: "&7Total de RTPs: &e{count}"
+    total-jailed: "&7Jogadores presos: &e{count}"
+    uptime: "&7Tempo online: &e{time}"
+  help:
+    title: "&8======= &bCXTeleport Ajuda &8======="
+    help-entry: "&e/{command} &7- {description}"
+
+# Protecao PvP
+pvp:
+  protection-start: "&aProtecao PvP ativada por &e{seconds} &asegundos!"
+  protection-end: "&cSua protecao PvP acabou!"
+  protection-cancelled: "&cProtecao PvP cancelada por ataque!"
